@@ -14,6 +14,11 @@ public class Servlet15 extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().append("Zadanie 5");
 
+        response.getWriter().append("<h1>Zrobione</h1><br>");
+        response.getWriter().append("<a href='/index.html'>Powrót do strony głównej</a>");
     }
 }

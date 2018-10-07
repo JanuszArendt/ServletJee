@@ -6,14 +6,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.Date;
 
-@WebServlet(name = "Servlet13")
+@WebServlet(name = "Servlet13", urlPatterns = "/Servlet13")
 public class Servlet13 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        Date dateNow = new Date();
 
+        response.getWriter().append(dateNow.toString());
+        response.getWriter().append("<br><a href='/index.html'>Powrót do strony głównej</a>");
     }
 }
